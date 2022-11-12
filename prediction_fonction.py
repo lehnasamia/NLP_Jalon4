@@ -16,6 +16,12 @@ from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 from spacy.lang.en.stop_words import STOP_WORDS
 
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+nltk.download('stopwords')
+
 '''Partie 1 : Préprocessing '''
 
 tokenizer = RegexpTokenizer(r'\w+')

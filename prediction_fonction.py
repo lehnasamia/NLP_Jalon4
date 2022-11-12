@@ -129,9 +129,9 @@ model_pred = load(file_name2)
 
 
 def prediction(model,vectorizer,n_topic,new_reviews):
+  new_reviews = preprocess_text(new_reviews) 
   blob=TextBlob(new_reviews)
   sentimentBlob=blob.sentiment.polarity
-  new_reviews = preprocess_text(new_reviews)
   new_reviews = [new_reviews]
   new_reviews_transformed=vectorizer.transform(new_reviews)
 

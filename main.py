@@ -1,6 +1,6 @@
 import streamlit as st
 from PIL import Image
-from prediction_fonction import *
+from prediction_fonction.py import *
 
 # Presentation de l'application
 

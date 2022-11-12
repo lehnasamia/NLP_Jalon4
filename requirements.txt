@@ -7,3 +7,4 @@ pickle-mixin
 scikit-learn
 spacy
 contractions
+en_core_web_sm

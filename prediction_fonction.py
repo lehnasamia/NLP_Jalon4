@@ -4,6 +4,7 @@ from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 import pandas as pd
 import contractions
+from pickle import *
 
 '''Partie 1 : Préprocessing '''
 

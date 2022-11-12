@@ -3,8 +3,6 @@ import numpy as np
 import pandas as pd
 import numpy as np
 import os
-import matplotlib.pyplot as plt
-import seaborn as sns
 import en_core_web_sm
 import nltk
 import contractions

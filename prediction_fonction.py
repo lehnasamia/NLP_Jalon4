@@ -97,10 +97,10 @@ vectorizer = load(vectoriseur_pickle)
 model_pickle = open('modelEntraineLehna','rb')
 vectoriseur_pickle = open('vectoriseurLehna','rb')
 
-with (open("modelEntraineLehna", "rb")) as f:
+with (model_pickle) as f:
     modelEntraineLehna =pickle.load(f)
 
-with (open("vectoriseur_pickle", "rb")) as p:
+with (vectoriseur_pickle) as p:
     vectoriseurLehna =pickle.load(p)
 
 def prediction(model,vectorizer,n_topic,new_reviews):

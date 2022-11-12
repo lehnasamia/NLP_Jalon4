@@ -85,15 +85,23 @@ def preprocess_text(text):
 
 '''Partie 2 : Prédiction d'un sujet d'insatisfaction'''
 
-'''Importer les fichiers pickles 'model' et 'vectoriseur'''
+'''Importer les fichiers pickles 'model' et 'vectoriseur
 
-model_pickle = open ("modelEntraineLehna",'rb')    
+model_pickle = open ('modelEntraineLehna','rb')    
 modelEntraine = load(model_pickle)
 
 
-vectoriseur_pickle = open ("vectoriseurLehna",'rb')
-vectorizer = load(vectoriseur_pickle)
+vectoriseur_pickle = open ('vectoriseurLehna','rb')
+vectorizer = load(vectoriseur_pickle)'''
 
+model_pickle = open('modelEntraineLehna','rb')
+vectoriseur_pickle = open('vectoriseurLehna','rb')
+
+with (open("modelEntraineLehna", "rb")) as f:
+model_pickle =pickle.load(f)
+
+with (open("vectoriseur_pickle", "rb")) as p:
+vectoriseur_pickle =pickle.load(p)
 
 def prediction(model,vectorizer,n_topic,new_reviews):
   blob=TextBlob(new_reviews)

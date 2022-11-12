@@ -98,10 +98,10 @@ model_pickle = open('modelEntraineLehna','rb')
 vectoriseur_pickle = open('vectoriseurLehna','rb')
 
 with (open("modelEntraineLehna", "rb")) as f:
-    model_pickle =pickle.load(f)
+    modelEntraineLehna =pickle.load(f)
 
 with (open("vectoriseur_pickle", "rb")) as p:
-    vectoriseur_pickle =pickle.load(p)
+    vectoriseurLehna =pickle.load(p)
 
 def prediction(model,vectorizer,n_topic,new_reviews):
   blob=TextBlob(new_reviews)

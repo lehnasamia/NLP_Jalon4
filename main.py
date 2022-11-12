@@ -21,4 +21,4 @@ with st.sidebar:
 
 
 if st.button(label="Détecter le sujet d'insatisfaction"):
-    prediction(modelEntraineLehna, vectoriseurLehna, nbr_topic, text)
+    prediction(model_pickle, vectoriseur_pickle, nbr_topic, text)

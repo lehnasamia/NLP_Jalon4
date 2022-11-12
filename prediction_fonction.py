@@ -127,40 +127,39 @@ vectorizer = load(file_name1)
 file_name2 = open("vectoriseurLehna","rb")
 model_pred = load(file_name2)
 
-TOPICS = ({     0 :'Cadre du lieu',
-                1 :'Plats en sauce',
-                2 :'Menu pizza ',
-                3 :'Service livraison et commandes',
-                4 :'Qualité des plats ',
-                5 :'Qualité du service',
-                6 :'Menu burger',
-                7 :'Temps attente',
-                8 :'Menu chicken',
-                9 :'Service bar ',
-                10:'Localisation du lieu',
-                11:'Relation client',
-                12:'Menu sandwich',
-                13:'Menu sushis',
-                14:'Clients revenus'
-          })
+def prediction(model,vectorizer,n_topic,new_reviews):
+  new_reviews = preprocess_text(new_reviews)
+  blob=TextBlob(new_reviews)
+  sentimentBlob=blob.sentiment.polarity
+  new_reviews = [new_reviews]
+  new_reviews_transformed=vectorizer.transform(new_reviews)
 
-def predict_topics(model, vectorizer, n_topics, text):
-    polarity = TextBlob(text).sentiment.polarity
-    if polarity < 0:
-        text = preprocess_text(text)
-        text = [text]
-        vectorized = vectorizer.transform(text)
-        topics_correlations = model.transform(vectorized)
-        unsorted_topics_correlations = topics_correlations[0].copy()
-        topics_correlations[0].sort()
-        sorted = topics_correlations[0][::-1]
-        print(sorted)
-        topics = []
-        for i in range(n_topics):
-            corr_value = sorted[i]
-            result = np.where(unsorted_topics_correlations == corr_value)[0]
-            topics.append(TOPICS.get(result[0]))
-        print(topics)
-        return polarity
-    else:
-        return polarity
+  prediction= model.transform(new_reviews_transformed)
+ 
+  topics=[ 'Cadre du lieu',
+           'Plats en sauce',
+           'Menu pizza ',
+           'Service livraison et commandes',
+           'Qualité des plats ',
+           'Qualité du service',
+           'Menu burger',
+           'Temps attente',
+           'Menu chicken',
+           'Service bar ',
+           'Localisation du lieu',
+           'Relation client',
+           'Menu sandwich',
+           'Menu sushis',
+           'Clients revenus']
+
+  if sentimentBlob<0 and sentimentBlob>-1:
+    max = np.argsort(prediction)
+    max_list=(list(max[0]))
+    max_list.reverse()
+    print(max_list)
+    topic=[]
+    for i in range(n_topic):
+      topic.append(topics[max_list[i]])  
+    return sentimentBlob,prediction,topic
+
+  return sentimentBlob

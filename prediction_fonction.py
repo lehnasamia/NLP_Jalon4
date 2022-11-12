@@ -1,8 +1,9 @@
+import nltk
 from nltk.tokenize import RegexpTokenizer
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
-from spacy.lang.en.stop_words import STOP_WORDS
 
+import contractions
 
 '''Partie 1 : Préprocessing '''
 

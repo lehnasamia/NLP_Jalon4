@@ -88,11 +88,11 @@ def preprocess_text(text):
 '''Importer les fichiers pickles 'model' et 'vectoriseur'''
 
 model_pickle = open ("modelEntraineLehna",'rb')    
-modelEntraine = load('model_pickle')
+modelEntraine = load(model_pickle)
 
 
 vectoriseur_pickle = open ("vectoriseurLehna",'rb')
-vectorizer = load('vectoriseur_pickle')
+vectorizer = load(vectoriseur_pickle)
 
 
 def prediction(model,vectorizer,n_topic,new_reviews):

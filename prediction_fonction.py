@@ -127,6 +127,22 @@ vectorizer = load(file_name1)
 file_name2 = open("vectoriseurLehna","rb")
 model_pred = load(file_name2)
 
+TOPICS = ({     0 :'Cadre du lieu',
+                1 :'Plats en sauce',
+                2 :'Menu pizza ',
+                3 :'Service livraison et commandes',
+                4 :'Qualité des plats ',
+                5 :'Qualité du service',
+                6 :'Menu burger',
+                7 :'Temps attente',
+                8 :'Menu chicken',
+                9 :'Service bar ',
+                10:'Localisation du lieu',
+                11:'Relation client',
+                12:'Menu sandwich',
+                13:'Menu sushis',
+                14:'Clients revenus'
+          })
 
 def predict_topics(model, vectorizer, n_topics, text):
     polarity = TextBlob(text).sentiment.polarity
@@ -143,7 +159,8 @@ def predict_topics(model, vectorizer, n_topics, text):
         for i in range(n_topics):
             corr_value = sorted[i]
             result = np.where(unsorted_topics_correlations == corr_value)[0]
-            topics.append(topics1.get(result[0]))
+            topics.append(TOPICS.get(result[0]))
         print(topics)
+        return polarity
     else:
         return polarity

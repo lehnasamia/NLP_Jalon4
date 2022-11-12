@@ -1,0 +1,6 @@
+pandas
+textblob
+numpy
+streamlit
+altair
+pickle-mixin

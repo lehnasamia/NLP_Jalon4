@@ -1,11 +1,24 @@
+import pickle
+import numpy as np
+import pandas as pd
+import numpy as np
+import os
+import matplotlib.pyplot as plt
+import seaborn as sns
+import en_core_web_sm
 import nltk
+import contractions
+
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.decomposition import NMF
+from pickle import *
+from textblob import TextBlob
+from wordcloud import WordCloud
 from nltk.tokenize import RegexpTokenizer
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
-import pandas as pd
-import contractions
-from pickle import *
-from textBlob import textBlob
+from spacy.lang.en.stop_words import STOP_WORDS
 
 '''Partie 1 : Préprocessing '''
 

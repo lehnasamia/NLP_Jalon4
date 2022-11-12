@@ -3,6 +3,7 @@ from nltk.tokenize import RegexpTokenizer
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 import pickle
+import pandas as pd
 import contractions
 
 '''Partie 1 : Préprocessing '''

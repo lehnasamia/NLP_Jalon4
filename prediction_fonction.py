@@ -13,7 +13,7 @@ def tokenize_text(text):
     text_processed = " ".join(tokenizer.tokenize(text))
     return text_processed
 
-nlp = en_core_web_sm.load(disable=['parser', 'tagger', 'ner'])
+'''nlp = en_core_web_sm.load(disable=['parser', 'tagger', 'ner'])'''
 
 lemmatizer = WordNetLemmatizer()
 

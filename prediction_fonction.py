@@ -5,6 +5,7 @@ from nltk.corpus import stopwords
 import pandas as pd
 import contractions
 from pickle import *
+from textBlob import textBlob
 
 '''Partie 1 : Préprocessing '''
 

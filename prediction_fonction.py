@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 import numpy as np
 import os
-import en_core_web_sm
 import nltk
 import contractions
 

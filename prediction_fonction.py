@@ -1,6 +1,3 @@
-
-from pickle import *
-from textblob import TextBlob
 from nltk.tokenize import RegexpTokenizer
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords

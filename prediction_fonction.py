@@ -4,7 +4,7 @@ from nltk.corpus import stopwords
 from spacy.lang.en.stop_words import STOP_WORDS
 
 
-"""#Partie 1 : Préprocessing """
+'''Partie 1 : Préprocessing '''
 
 tokenizer = RegexpTokenizer(r'\w+')
 
@@ -82,9 +82,9 @@ def preprocess_text(text):
     
     return text
 
-"""#Partie 2 : Prédiction d'un sujet d'insatisfaction"""
+'''Partie 2 : Prédiction d'un sujet d'insatisfaction'''
 
-#Importer les fichiers pickles 'model' et 'vectoriseur' 
+'''Importer les fichiers pickles 'model' et 'vectoriseur'''
 
 model_pickle = open ("modelEntraineLehna",'rb')
 modelEntraine = load(model_pickle)

@@ -1,6 +1,6 @@
 import streamlit as st
 from PIL import Image
-from prediction_fonction.py import *
+from prediction_fonction import *
 
 # Presentation de l'application
 
@@ -21,4 +21,4 @@ with st.sidebar:
 
 
 if st.button(label="Détecter le sujet d'insatisfaction"):
-    prediction(modelEntraine, vectorizer, nbr_topic, text)
+    prediction(modelEntraine, vectorizer, nbr_topic, tex

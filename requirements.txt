@@ -4,3 +4,4 @@ numpy
 streamlit
 altair
 pickle-mixin
+scikit-learn

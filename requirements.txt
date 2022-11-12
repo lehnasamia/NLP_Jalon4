@@ -4,3 +4,6 @@ numpy
 streamlit
 altair
 pickle-mixin
+en_core_web_sm
+nltk
+contractions

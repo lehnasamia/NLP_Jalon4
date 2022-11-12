@@ -1,11 +1,11 @@
-'''import nltk
+import nltk
 from nltk.tokenize import RegexpTokenizer
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 
 import contractions
 
-Partie 1 : Préprocessing 
+'''Partie 1 : Préprocessing '''
 
 tokenizer = RegexpTokenizer(r'\w+')
 
@@ -13,7 +13,7 @@ def tokenize_text(text):
     text_processed = " ".join(tokenizer.tokenize(text))
     return text_processed
 
-nlp = en_core_web_sm.load(disable=['parser', 'tagger', 'ner'])
+'''nlp = en_core_web_sm.load(disable=['parser', 'tagger', 'ner'])'''
 
 lemmatizer = WordNetLemmatizer()
 
@@ -81,7 +81,7 @@ def preprocess_text(text):
     # Remove stopwords
     text = remove_stopwords(text)
     
-    return text'''
+    return text
 
 '''Partie 2 : Prédiction d'un sujet d'insatisfaction'''
 

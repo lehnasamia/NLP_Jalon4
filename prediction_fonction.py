@@ -94,7 +94,7 @@ modelEntraine = load(model_pickle)
 
 vectoriseur_pickle = open ('vectoriseurLehna','rb')
 vectorizer = load(vectoriseur_pickle)
-'''
+
 model_pickle = open('modelEntraineLehna','rb')
 vectoriseur_pickle = open('vectoriseurLehna','rb')
 
@@ -103,6 +103,14 @@ with (model_pickle) as f:
 
 with (vectoriseur_pickle) as p:
     vectoriseurLehna =pickle.load(p)
+'''
+
+file_name1 = open("modelEntraineLehna",'rb')
+vectorizer = load(file_name1)
+
+file_name2 = open("vectoriseurLehna","rb")
+model_pred = load(file_name2)
+
 
 def prediction(model,vectorizer,n_topic,new_reviews):
   blob=TextBlob(new_reviews)

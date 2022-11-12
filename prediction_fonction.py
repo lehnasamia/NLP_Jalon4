@@ -128,8 +128,6 @@ file_name2 = open("vectoriseurLehna","rb")
 model_pred = load(file_name2)
 
 
-
-
 def predict_topics(model, vectorizer, n_topics, text):
     polarity = TextBlob(text).sentiment.polarity
     if polarity < 0:
@@ -142,10 +140,10 @@ def predict_topics(model, vectorizer, n_topics, text):
         sorted = topics_correlations[0][::-1]
         print(sorted)
         topics = []
-     for i in range(n_topics):
-        corr_value = sorted[i]
-        result = np.where(unsorted_topics_correlations == corr_value)[0]
-        topics.append(topics1.get(result[0]))
+        for i in range(n_topics):
+            corr_value = sorted[i]
+            result = np.where(unsorted_topics_correlations == corr_value)[0]
+            topics.append(topics1.get(result[0]))
         print(topics)
     else:
         return polarity
